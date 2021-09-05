@@ -996,6 +996,7 @@ class IBVerbsVan : public Van {
           OnAddrResolved(event);
           break;
         case RDMA_CM_EVENT_ROUTE_RESOLVED:
+					ADLOG("RDMA_ROUTE RESOLVED, using IBVERBS/RDMA!");
           OnRouteResolved(event);
           break;
         case RDMA_CM_EVENT_ESTABLISHED:

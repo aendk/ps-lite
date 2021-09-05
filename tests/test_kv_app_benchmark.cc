@@ -45,6 +45,7 @@ void RunWorker() {
   std::vector<float> vals(num);
 
   int rank = MyRank();
+  LL << " I [" << rank << "] am alive !";
   srand(rank + 7);
   for (int i = 0; i < num; ++i) {
     keys[i] = kMaxKey / num * i + rank;

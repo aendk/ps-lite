@@ -109,6 +109,8 @@ inline void InitLogging(const char* argv0) {
 #define DCHECK_GE(x, y) CHECK((x) >= (y))
 #define DCHECK_EQ(x, y) CHECK((x) == (y))
 #define DCHECK_NE(x, y) CHECK((x) != (y))
+#define ADLOG(x) \
+  { std::stringstream ___s; ___s << x << "\n"; std::cout << ___s.str() << std::flush;} // atomic debug log [sysChange]
 #endif  // NDEBUG
 
 #define LOG_INFO dmlc::LogMessage(__FILE__, __LINE__)

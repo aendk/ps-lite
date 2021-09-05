@@ -45,6 +45,8 @@ class ZMQVan : public Van {
     start_mu_.unlock();
     // zmq_ctx_set(context_, ZMQ_IO_THREADS, 4);
     Van::Start(customer_id);
+    ADLOG("starting zmq, using legacy TCP networking");
+
   }
 
   void Stop() override {

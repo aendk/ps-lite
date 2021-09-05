@@ -14,7 +14,11 @@ shift
 arg="$@"
 
 # start the scheduler
-export DMLC_PS_ROOT_URI='127.0.0.1'
+#export DMLC_PS_ROOT_URI='127.0.0.1'
+export DMLC_ENABLE_RDMA=1
+export DMLC_PS_VAN_TYPE=ibverbs
+export DMLC_INTERFACE=eno1        # my RDMA interface
+export DMLC_PS_ROOT_URI='172.29.2.41'  # scheduler's RDMA interface IP  <- get both of these out of my lapse setup-tool
 export DMLC_PS_ROOT_PORT=8000
 export DMLC_ROLE='scheduler'
 ${bin} ${arg} &
